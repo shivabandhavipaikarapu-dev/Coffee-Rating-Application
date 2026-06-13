@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coffee Rating App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Coffee Rating Application</h1>
+
+    {% for item in items %}
+
+    <div class="card">
+        <h2>{{ item.name }}</h2>
+
+        <p>Votes: {{ item.votes }}</p>
+
+        <a href="/vote/{{ item.id }}">
+            <button>Vote</button>
+        </a>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
